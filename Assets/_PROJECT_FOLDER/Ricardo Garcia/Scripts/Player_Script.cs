@@ -5,21 +5,10 @@ using UnityEngine;
 public class Player_Script : MonoBehaviour
 {
     public Animator character_animator;
-
-    public Transform center_position;
-    public Transform left_position;
-    public Transform right_position;
-    public Transform current_position;
-
+    public float move_mult = 1;
 
     private float timer = 0.05f;
     private bool start_timer = false;
-
-    private void Start()
-    {
-        current_position.position = this.transform.position;
-    }
-
 
     void Update()
     {
@@ -38,48 +27,49 @@ public class Player_Script : MonoBehaviour
             }
         }
 
-
-        //left
-        if (Input.GetKeyDown("a") && start_timer == false)
-        {
-            character_animator.SetInteger("state", 2);
-            start_timer = true;
-        }
-
-        //right
-        if (Input.GetKeyDown("d") && start_timer == false)
-        {
-            character_animator.SetInteger("state", 1);
-            start_timer = true;
-        }
-
         //jump
-        if (Input.GetKeyDown("w") && start_timer == false)
+        if (Input.GetKey("w") && start_timer == false)
         {
+            character_animator.SetInteger("state", 0);
             character_animator.SetInteger("state", 3);
             start_timer = true;
         }
 
         //roll
-        if (Input.GetKeyDown("s") && start_timer == false)
+        if (Input.GetKey("s") && start_timer == false)
         {
+            character_animator.SetInteger("state", 0);
             character_animator.SetInteger("state", 4);
             start_timer = true;
+        }
+
+        if(Input.GetKeyUp("a") || Input.GetKeyUp("d") || Input.GetKeyUp("w") || Input.GetKeyUp("s"))
+        {
+            character_animator.SetInteger("state", 0);
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //player position
 
         //left
-        if (Input.GetKeyDown("a"))
+        if (Input.GetKey("a") && this.transform.position.x < 11.5)
         {
-            current_position.position = left_position.position;
+            character_animator.SetInteger("state", 0);
+            Vector3 move = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+            move.x = move.x + Time.deltaTime * move_mult;
+            this.transform.SetPositionAndRotation(move, this.transform.rotation);
+            character_animator.SetInteger("state", 2);
         }
         //right
-        if (Input.GetKeyDown("d"))
+        if (Input.GetKey("d") && this.transform.position.x > 4.7)
         {
-            current_position.position = right_position.position;
+            character_animator.SetInteger("state", 0);
+            Vector3 move = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+            move.x = move.x - Time.deltaTime * move_mult;
+            this.transform.SetPositionAndRotation(move, this.transform.rotation);
+            character_animator.SetInteger("state", 1);
         }
+        
 
 
     }
