@@ -10,6 +10,12 @@ public class Player_Script : MonoBehaviour
     private float timer = 0.05f;
     private bool start_timer = false;
 
+    public ParticleSystem shoot_particle;
+    public AudioSource gun_sound_1;
+    public AudioSource gun_sound_2;
+    float fire_rate = 0.2f;
+    bool start_fire_rate = false;
+
     void Update()
     {
 
@@ -52,7 +58,7 @@ public class Player_Script : MonoBehaviour
         //player position
 
         //left
-        if (Input.GetKey("a") && this.transform.position.x < 11.5)
+        if (Input.GetKey("d") && this.transform.position.x < 11.5)
         {
             character_animator.SetInteger("state", 0);
             Vector3 move = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
@@ -61,7 +67,7 @@ public class Player_Script : MonoBehaviour
             character_animator.SetInteger("state", 2);
         }
         //right
-        if (Input.GetKey("d") && this.transform.position.x > 4.7)
+        if (Input.GetKey("a") && this.transform.position.x > 4.7)
         {
             character_animator.SetInteger("state", 0);
             Vector3 move = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
@@ -69,7 +75,35 @@ public class Player_Script : MonoBehaviour
             this.transform.SetPositionAndRotation(move, this.transform.rotation);
             character_animator.SetInteger("state", 1);
         }
-        
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //shoot
+
+        if(start_fire_rate == true)
+        {
+            fire_rate = fire_rate - Time.deltaTime;
+            if (fire_rate <= 0)
+            {
+                start_fire_rate = false;
+                fire_rate = 0.2f;
+            }
+        }
+
+        if (Input.GetMouseButtonDown(0) && start_fire_rate == false) 
+        {
+            shoot_particle.Play();
+            int random = Random.Range(0, 2);
+            if(random == 0)
+            {
+                gun_sound_1.Play();
+            }
+            if (random == 1)
+            {
+                gun_sound_2.Play();
+            }
+            start_fire_rate = true;
+
+        }
 
 
     }
