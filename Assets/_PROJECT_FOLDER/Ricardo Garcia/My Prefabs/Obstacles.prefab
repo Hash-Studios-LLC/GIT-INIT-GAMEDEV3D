@@ -95,6 +95,8 @@ GameObject:
   - component: {fileID: 998329960456057717}
   - component: {fileID: 1007548152540080969}
   - component: {fileID: 998329960456057718}
+  - component: {fileID: 4481520213582043904}
+  - component: {fileID: 3667519120811634911}
   m_Layer: 6
   m_Name: Dumpster
   m_TagString: Untagged
@@ -176,11 +178,39 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984779646586663787}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.1834211, y: 1.4068105, z: 1.4625463}
   m_Center: {x: 0.01751709, y: 0.70340526, z: -0.041338444}
+--- !u!54 &4481520213582043904
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984779646586663787}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!114 &3667519120811634911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984779646586663787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ce7a4273bb3244bb754c329fbdf264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &984908368642772956
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,6 +224,8 @@ GameObject:
   - component: {fileID: 1007400660593518222}
   - component: {fileID: 957311033594217341}
   - component: {fileID: 957311033594217342}
+  - component: {fileID: 9198286747020426609}
+  - component: {fileID: 6039553514375412285}
   m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
@@ -298,11 +330,39 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984908368642772956}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.6386166, y: 1.7792118, z: 1.1563597}
   m_Center: {x: -3.6174803, y: 2.1103992, z: -0.43145466}
+--- !u!54 &9198286747020426609
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984908368642772956}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!114 &6039553514375412285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984908368642772956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ce7a4273bb3244bb754c329fbdf264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &984932190755439654
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,6 +376,8 @@ GameObject:
   - component: {fileID: 1007914330613085912}
   - component: {fileID: 936098897212563096}
   - component: {fileID: 936098897212563097}
+  - component: {fileID: 5157555636442728282}
+  - component: {fileID: 3996463931520932931}
   m_Layer: 6
   m_Name: Barrier yellow
   m_TagString: Untagged
@@ -417,11 +479,39 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 984932190755439654}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.48183608, y: 1.0181274, z: 2.1700127}
   m_Center: {x: -0.014193714, y: 0.5090637, z: 0.021464348}
+--- !u!54 &5157555636442728282
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984932190755439654}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!114 &3996463931520932931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984932190755439654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ce7a4273bb3244bb754c329fbdf264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &985010166457928416
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,6 +719,8 @@ GameObject:
   - component: {fileID: 1007892520382301540}
   - component: {fileID: 935947017711362856}
   - component: {fileID: 935947017711362857}
+  - component: {fileID: 5295617880690131532}
+  - component: {fileID: 4292431276429499869}
   m_Layer: 6
   m_Name: Fence
   m_TagString: Untagged
@@ -730,11 +822,39 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985077595736441414}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.15785602, y: 2.8218696, z: 2.1235085}
   m_Center: {x: -0.009424958, y: 1.4109348, z: 5.2875423e-17}
+--- !u!54 &5295617880690131532
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985077595736441414}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!114 &4292431276429499869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985077595736441414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ce7a4273bb3244bb754c329fbdf264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &985129107556868465
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,6 +868,8 @@ GameObject:
   - component: {fileID: 1007599544501591415}
   - component: {fileID: 936249790652966541}
   - component: {fileID: 936249790652966542}
+  - component: {fileID: 3535122572766058554}
+  - component: {fileID: 2063929585870777990}
   m_Layer: 6
   m_Name: Barrier white
   m_TagString: Untagged
@@ -849,11 +971,39 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985129107556868465}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.48183608, y: 1.0181274, z: 2.1700127}
   m_Center: {x: -0.014193714, y: 0.5090637, z: 0.021464348}
+--- !u!54 &3535122572766058554
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985129107556868465}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!114 &2063929585870777990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985129107556868465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ce7a4273bb3244bb754c329fbdf264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &985204821217582881
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,6 +1016,8 @@ GameObject:
   - component: {fileID: 998335463591003711}
   - component: {fileID: 1007790117327251977}
   - component: {fileID: 998335463591003704}
+  - component: {fileID: 7763122908311582658}
+  - component: {fileID: 421974029662668814}
   m_Layer: 6
   m_Name: Trash
   m_TagString: Untagged
@@ -947,11 +1099,39 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985204821217582881}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.9190222, y: 0.878628, z: 1.1738749}
   m_Center: {x: 0.005237778, y: 0.30260837, z: -0.2572107}
+--- !u!54 &7763122908311582658
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985204821217582881}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!114 &421974029662668814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985204821217582881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ce7a4273bb3244bb754c329fbdf264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &985301714013641875
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,6 +1145,8 @@ GameObject:
   - component: {fileID: 1007556491076042187}
   - component: {fileID: 935357931317943485}
   - component: {fileID: 935357931317943486}
+  - component: {fileID: 6804348289999436664}
+  - component: {fileID: 7645548416175848834}
   m_Layer: 6
   m_Name: Barrier red
   m_TagString: Untagged
@@ -1066,11 +1248,39 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985301714013641875}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.48183608, y: 1.0181274, z: 2.1700127}
   m_Center: {x: -0.014193714, y: 0.5090637, z: 0.021464348}
+--- !u!54 &6804348289999436664
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985301714013641875}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!114 &7645548416175848834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985301714013641875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ce7a4273bb3244bb754c329fbdf264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &986163651331963478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1478,6 +1688,8 @@ GameObject:
   - component: {fileID: 7841454877336364755}
   - component: {fileID: 7007819457729028114}
   - component: {fileID: 2911317088781870061}
+  - component: {fileID: 4201981649225584658}
+  - component: {fileID: 6822728839197498533}
   m_Layer: 0
   m_Name: Car_3B
   m_TagString: Untagged
@@ -1562,7 +1774,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7818330628014740387}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.4264205, y: 1.904447, z: 5.618907}
@@ -1588,6 +1800,34 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!54 &4201981649225584658
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7818330628014740387}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!114 &6822728839197498533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7818330628014740387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ce7a4273bb3244bb754c329fbdf264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8002593718905071115
 GameObject:
   m_ObjectHideFlags: 0
@@ -1861,8 +2101,10 @@ GameObject:
   - component: {fileID: 7999330734164133683}
   - component: {fileID: 8032271380255847613}
   - component: {fileID: 8024525535699330995}
-  - component: {fileID: 7952480731228222677}
   - component: {fileID: 7284863905910336806}
+  - component: {fileID: 1470878633314231356}
+  - component: {fileID: 608258061351028990}
+  - component: {fileID: 2516385893148816839}
   m_Layer: 0
   m_Name: Car_8D
   m_TagString: Untagged
@@ -1942,27 +2184,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &7952480731228222677
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8002593724051673359}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e0532266d4a13453ab8ba4e2023379fe, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!65 &7284863905910336806
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1976,6 +2197,55 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.069551, y: 1.4799718, z: 5.5052457}
   m_Center: {x: -0.0048628785, y: 0.97596914, z: -0.012394853}
+--- !u!95 &1470878633314231356
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8002593724051673359}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e3071b737a97937408e5dafc406784d8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &608258061351028990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8002593724051673359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ce7a4273bb3244bb754c329fbdf264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &2516385893148816839
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8002593724051673359}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!1 &8002593724559641427
 GameObject:
   m_ObjectHideFlags: 0
