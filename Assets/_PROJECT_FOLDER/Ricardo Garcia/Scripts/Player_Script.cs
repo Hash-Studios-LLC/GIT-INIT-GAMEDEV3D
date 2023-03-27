@@ -28,12 +28,16 @@ public class Player_Script : MonoBehaviour
 
     public void kill_player()
     {
-        player_is_alive = false;
-        map_speed = 0;
-        character_animator.SetInteger("state", -1);
-        background_music.Stop();
-        loose_sound.Play();
-        impact_sound.Play();
+        if(player_is_alive == true)
+        {
+            player_is_alive = false;
+            map_speed = 0;
+            character_animator.SetInteger("state", -1);
+            background_music.Stop();
+            loose_sound.Play();
+            impact_sound.Play();
+        }
+       
     }
 
 
