@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Script : MonoBehaviour
 {
@@ -172,7 +173,16 @@ public class Player_Script : MonoBehaviour
             jar.transform.SetPositionAndRotation(jar_position, jar.transform.rotation);
         }
 
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///restart game
 
+        if (player_is_alive == false)
+        {
+            if (Input.GetKeyDown("r"))
+            {
+                SceneManager.LoadScene("RickyScene");
+            }
+        }
 
     }
 

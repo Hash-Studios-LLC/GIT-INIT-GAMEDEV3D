@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_PROJECT_FOLDER/Ricardo Garcia/Scenes/RickyScene.unity
+    guid: a996d7af8044f4f459a04d7765c8ccff
   m_configObjects: {}
