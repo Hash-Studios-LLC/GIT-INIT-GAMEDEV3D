@@ -25,6 +25,8 @@ public class Player_Script : MonoBehaviour
     public GameObject jar;
     public float jar_speed = 2;
 
+    public string left = "d";
+    public string right = "a";
 
     public void kill_player()
     {
@@ -88,7 +90,7 @@ public class Player_Script : MonoBehaviour
         //player position
 
         //left
-        if (Input.GetKey("d") && this.transform.position.x < 11.5 && player_is_alive == true)
+        if (Input.GetKey(left) && this.transform.position.x < 11.5 && player_is_alive == true)
         {
             character_animator.SetInteger("state", 0);
             Vector3 move = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
@@ -97,7 +99,7 @@ public class Player_Script : MonoBehaviour
             character_animator.SetInteger("state", 2);
         }
         //right
-        if (Input.GetKey("a") && this.transform.position.x > 4.7 && player_is_alive == true)
+        if (Input.GetKey(right) && this.transform.position.x > 4.7 && player_is_alive == true)
         {
             character_animator.SetInteger("state", 0);
             Vector3 move = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
@@ -118,9 +120,22 @@ public class Player_Script : MonoBehaviour
                 fire_rate = 0.2f;
             }
         }
-
+       
         if (Input.GetMouseButtonDown(0) && start_fire_rate == false && player_is_alive == true) 
         {
+            Ray ray = new Ray(this.transform.position, -this.transform.forward);
+            Physics.Raycast(ray, out RaycastHit hitinfo, 20);
+           
+            if(hitinfo.collider !=null && hitinfo.collider.gameObject.layer == 9)
+            {
+                enemy_script enemy = hitinfo.collider.gameObject.GetComponent<enemy_script>();
+                if(enemy != null)
+                {
+                    enemy.die();
+                }
+            }
+   
+
             shoot_particle.Play();
             int random = Random.Range(0, 2);
             if(random == 0)
