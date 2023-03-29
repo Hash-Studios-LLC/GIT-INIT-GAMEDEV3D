@@ -7535,8 +7535,8 @@ GameObject:
   - component: {fileID: 5890302521733917267}
   - component: {fileID: 5890302521733917260}
   - component: {fileID: 1120078206542077864}
-  - component: {fileID: 2776597013630400768}
   - component: {fileID: 8735677896900694796}
+  - component: {fileID: 5472735348585794194}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -7633,7 +7633,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.834084, y: 1.8196698, z: 1}
   m_Center: {x: -0.021749707, y: 0.98869795, z: 1.2853607e-12}
---- !u!54 &2776597013630400768
+--- !u!114 &8735677896900694796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5890302521733917261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98093bede12c0aa4daf59af342acdc0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 5890302519991477079}
+  blood_explosion: {fileID: 176090228842797272}
+--- !u!54 &5472735348585794194
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7649,20 +7663,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &8735677896900694796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5890302521733917261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98093bede12c0aa4daf59af342acdc0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  character: {fileID: 5890302519991477079}
-  blood_explosion: {fileID: 176090228842797272}
 --- !u!1 &5890302521740087755
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Player_Script : MonoBehaviour
 {
@@ -29,6 +30,19 @@ public class Player_Script : MonoBehaviour
     public string left = "d";
     public string right = "a";
 
+    public GameObject player_model;
+    public Transform roate_left;
+    public Transform rotate_right;
+    public Transform center;
+
+    public float highscore = 0;
+    public float score;
+    public float score_mult = 2;
+    public TextMeshProUGUI highscore_text;
+    public TextMeshProUGUI score_text;
+    public GameObject restart_button;
+    public TextMeshProUGUI player_name;
+
     public void kill_player()
     {
         if(player_is_alive == true)
@@ -43,6 +57,31 @@ public class Player_Script : MonoBehaviour
        
     }
 
+    public void restart_game()
+    {
+            SceneManager.LoadScene("RickyScene");     
+    }
+
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey("highscore"))
+        {
+            highscore = PlayerPrefs.GetInt("highscore");
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 9)
+        {
+            enemy_script enemy = other.gameObject.GetComponent<enemy_script>();
+            if (enemy != null)
+            {
+               // score = score - 30;
+                enemy.die();
+            }
+        }
+    }
 
     void Update()
     {
@@ -178,11 +217,52 @@ public class Player_Script : MonoBehaviour
 
         if (player_is_alive == false)
         {
-            if (Input.GetKeyDown("r"))
+            restart_button.SetActive(true);
+        }
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///ROTATE PLAYER
+
+        if (Input.GetKey(left) && this.transform.position.x < 11.5 && player_is_alive == true)
+        {
+            player_model.transform.SetPositionAndRotation(player_model.transform.position, roate_left.rotation);
+        }
+
+        else if (Input.GetKey(right) && this.transform.position.x > 4.7 && player_is_alive == true)
+        {
+            player_model.transform.SetPositionAndRotation(player_model.transform.position, rotate_right.rotation);
+        }
+        else
+        {
+            player_model.transform.SetPositionAndRotation(player_model.transform.position, center.rotation);
+        }
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///PLAYER SCORE
+
+        //    public int score;
+        //  public TextMeshProUGUI score_text;
+
+        if (player_is_alive == true)
+        {
+            score = score + Time.deltaTime * score_mult;
+            score_text.text = Mathf.RoundToInt(score).ToString();
+        }
+
+
+        if (player_is_alive == false)
+        {
+            if(score > highscore)
             {
-                SceneManager.LoadScene("RickyScene");
+                //PlayerPrefs.GetString("highscoreName") + PlayerPrefs.GetInt("highscore");
+                PlayerPrefs.SetInt("highscore", Mathf.RoundToInt(score));
+                PlayerPrefs.SetString("highscoreName", player_name.text);
+                highscore_text.text = PlayerPrefs.GetString("highscoreName") + ": " + PlayerPrefs.GetInt("highscore");
             }
         }
+
 
     }
 
