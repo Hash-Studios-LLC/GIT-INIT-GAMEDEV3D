@@ -47352,20 +47352,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2043950967}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d112451c644aa544dafbb4578ee4c8a2, type: 3}
+  m_Script: {fileID: 11500000, guid: a30eb82582603534d8484f31c58e9b9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  main_game: {fileID: 0}
-  menu: {fileID: 0}
-  script_player: {fileID: 0}
-  character_animator: {fileID: 0}
-  fx_start: {fileID: 0}
-  name_text: {fileID: 0}
-  current_text_name: {fileID: 0}
-  play_button: {fileID: 0}
-  input_GO: {fileID: 0}
-  score_go: {fileID: 0}
-  highestscore_text: {fileID: 0}
 --- !u!1 &2051043489
 GameObject:
   m_ObjectHideFlags: 0
@@ -49712,9 +49701,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: start_game, Assembly-CSharp
-        m_MethodName: start_the_game
+      - m_Target: {fileID: 2043950972}
+        m_TargetAssemblyTypeName: dan_menuScript, Assembly-CSharp
+        m_MethodName: OpenMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
