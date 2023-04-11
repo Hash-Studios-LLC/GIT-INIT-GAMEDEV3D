@@ -121,7 +121,13 @@ public class Player_Script : MonoBehaviour
             character_animator.SetInteger("state", 0);
         }
 
-        if(player_is_alive == false)
+        if(Input.GetAxis("Horizontal1") < 0.3 && Input.GetAxis("Horizontal1") > -0.3 || Input.GetAxis("Vertical1") < 0.3 && Input.GetAxis("Vertical1") > -0.3)
+        {
+            character_animator.SetInteger("state", 0);
+        }
+
+
+            if (player_is_alive == false)
         {
             character_animator.SetInteger("state", -1);
         }
@@ -129,8 +135,8 @@ public class Player_Script : MonoBehaviour
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //player position
 
-        //left
-        if (Input.GetKey(left) && this.transform.position.x < 11.5 && player_is_alive == true)
+        //left      
+        if (Input.GetKey(left) || Input.GetAxis("Horizontal1") >= 0.5 && this.transform.position.x < 11.5 && player_is_alive == true)
         {
             character_animator.SetInteger("state", 0);
             Vector3 move = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
@@ -139,7 +145,7 @@ public class Player_Script : MonoBehaviour
             character_animator.SetInteger("state", 2);
         }
         //right
-        if (Input.GetKey(right) && this.transform.position.x > 4.7 && player_is_alive == true)
+        if (Input.GetKey(right) || Input.GetAxis("Horizontal1") <= -0.5 && this.transform.position.x > 4.7 && player_is_alive == true)
         {
             character_animator.SetInteger("state", 0);
             Vector3 move = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
@@ -161,33 +167,35 @@ public class Player_Script : MonoBehaviour
             }
         }
        
-        if (Input.GetMouseButtonDown(0) && start_fire_rate == false && player_is_alive == true) 
+        if (Input.GetMouseButtonDown(0) || Input.GetAxis("Fire1") >= 0.2) 
         {
-            Ray ray = new Ray(this.transform.position, -this.transform.forward);
-            Physics.Raycast(ray, out RaycastHit hitinfo, 20);
-           
-            if(hitinfo.collider !=null && hitinfo.collider.gameObject.layer == 9)
+            if(start_fire_rate == false && player_is_alive == true)
             {
-                enemy_script enemy = hitinfo.collider.gameObject.GetComponent<enemy_script>();
-                if(enemy != null)
+                Ray ray = new Ray(this.transform.position, -this.transform.forward);
+                Physics.Raycast(ray, out RaycastHit hitinfo, 20);
+
+                if (hitinfo.collider != null && hitinfo.collider.gameObject.layer == 9)
                 {
-                    enemy.die();
+                    enemy_script enemy = hitinfo.collider.gameObject.GetComponent<enemy_script>();
+                    if (enemy != null)
+                    {
+                        enemy.die();
+                    }
                 }
-            }
-   
 
-            shoot_particle.Play();
-            int random = Random.Range(0, 2);
-            if(random == 0)
-            {
-                gun_sound_1.Play();
-            }
-            if (random == 1)
-            {
-                gun_sound_2.Play();
-            }
-            start_fire_rate = true;
 
+                shoot_particle.Play();
+                int random = Random.Range(0, 2);
+                if (random == 0)
+                {
+                    gun_sound_1.Play();
+                }
+                if (random == 1)
+                {
+                    gun_sound_2.Play();
+                }
+                start_fire_rate = true;
+            }
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -224,12 +232,12 @@ public class Player_Script : MonoBehaviour
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ///ROTATE PLAYER
 
-        if (Input.GetKey(left) && this.transform.position.x < 11.5 && player_is_alive == true)
+        if (Input.GetKey(left) || Input.GetAxis("Horizontal1") >= 0.5 && this.transform.position.x < 11.5 && player_is_alive == true)
         {
             player_model.transform.SetPositionAndRotation(player_model.transform.position, roate_left.rotation);
         }
 
-        else if (Input.GetKey(right) && this.transform.position.x > 4.7 && player_is_alive == true)
+        else if (Input.GetKey(right) || Input.GetAxis("Horizontal1") <= -0.5 && this.transform.position.x > 4.7 && player_is_alive == true)
         {
             player_model.transform.SetPositionAndRotation(player_model.transform.position, rotate_right.rotation);
         }

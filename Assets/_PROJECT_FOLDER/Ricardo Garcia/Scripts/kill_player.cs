@@ -5,12 +5,20 @@ using UnityEngine;
 public class kill_player : MonoBehaviour
 {
     public GameObject explosion;
+    public GameObject explosion_transparent;
 
     public void explode()
     {
         explosion.SetActive(true);
         this.gameObject.SetActive(false);
     }
+
+    public void explode2()
+    {
+        explosion_transparent.SetActive(true);
+        this.gameObject.SetActive(false);
+    }
+
 
 
     private void OnTriggerStay(Collider other)
